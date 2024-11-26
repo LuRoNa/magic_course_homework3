@@ -14,8 +14,13 @@
 # ('/var/log', 'system', 'log')
 
 
-def split_file_path(file_path):
-    pass  # вместо pass - напишите свое решение
+def split_file_path(file_path: str) -> tuple[str]:
+    # path = file_path.split("/")
+    # file, ex = path[-1].split(".")
+    # return "/".join(path[:-1]), file, ex
+
+    *path, file = file_path.split("/")
+    return ("/".join(path), *file.split("."))
 
 
 if __name__ == "__main__":

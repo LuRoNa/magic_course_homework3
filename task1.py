@@ -23,8 +23,11 @@
 # print(check_companies_profit(companies2))  # True
 
 
-def check_companies_profit(companies):
-    pass  # вместо pass - напишите свое решение
+def check_companies_profit(companies: dict[str, list[int]]) -> bool:
+    for values in companies.values():
+        if sum(values) < 0:
+            return False
+    return True
 
 
 if __name__ == "__main__":
